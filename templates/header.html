@@ -1,0 +1,43 @@
+<!-- Navbar Start -->
+<nav class="navbar navbar-inverse navbar-fixed-top" role="banner">
+    <div class="container">
+
+        <div class="navbar-header">
+
+            <!-- Telefon ekranları için menü butonu -->
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- İsim Soyisim veya Marka İsmi -->
+            <a href="{% url 'home' %}" class="navbar-brand">Oğuzhan ABALI</a>
+        </div>
+
+        <nav class="collapse navbar-collapse" role="navigation">
+
+   
+            <!-- Temel Sayfalar -->
+            <ul class="nav navbar-nav navbar-right">
+                {% if request.user.is_authenticated %}
+                    <li><a href="{% url 'post:create' %}" >Yazı Ekle</a></li>
+                {% endif %}
+                <li><a href="{% url 'home' %}">Anasayfa</a></li>
+                <li><a href="{% url 'post:index' %}">Blog</a></li>
+                <li><a href="{% url 'pages:hakkimizda' %}">Hakkımda</a></li>
+                <li><a href="{% url 'pages:iletisim' %}">İletişim</a></li>
+
+                {% if not request.user.is_authenticated %}
+                    <li><a href="{% url 'accounts:register' %}">Üye Ol</a></li>
+                    <li><a href="{% url 'accounts:login' %}">Giriş</a></li>
+                {% else %}
+                    <li><a href="{% url 'accounts:logout' %}">Çıkış</a></li>
+                {% endif %}
+            </ul>
+
+        </nav>
+
+    </div>
+</nav>
