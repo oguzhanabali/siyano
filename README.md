@@ -1,9 +1,9 @@
 #Hakkında
 örnek proje
 
-## Kurulum
+## Install
 
-İndirdikten sonra proje dizini içerisinde :
+git clone this project, after step by step:
 
 `virtualenv venv`
 
