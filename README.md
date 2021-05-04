@@ -1,6 +1,3 @@
-#Hakkında
-örnek proje
-
 ## Install
 
 git clone this project, after step by step:
